@@ -2,8 +2,7 @@
   "extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order", "stylelint-config-prettier"],
   "overrides": [
     {
-      "files": ["**/*.scss"],
-      "customSyntax": "postcss-scss"
+      "files": ["**/*.scss"]
     }
   ],
   "plugins": ["stylelint-declaration-strict-value"],
@@ -12,6 +11,7 @@
     "color-function-notation": "legacy",
     "color-hex-case": "lower",
     "color-hex-length": "long",
+    "custom-property-pattern": "[A-Z]",
     "custom-property-empty-line-before": null,
     "declaration-empty-line-before": "never",
     "font-family-name-quotes": "always-where-recommended",
