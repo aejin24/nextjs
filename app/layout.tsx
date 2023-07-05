@@ -1,5 +1,6 @@
 import "./@shared/styles/config/reset.scss";
 import "./@shared/styles/config/global.scss";
+import Provider from "./Provider";
 
 export const metadata = {
   title: "Create Next App",
@@ -9,7 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }
