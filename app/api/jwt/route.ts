@@ -22,13 +22,7 @@ export async function POST(req: Request) {
         // 토큰 유효시간 3H
         const accessToken = sign({ email, password }, secret, { expiresIn: "180m" });
 
-        const response = NextResponse.json({ data: { result: true } }, { status: 200 });
-        response.cookies.set({
-          name: "token",
-          value: accessToken,
-          httpOnly: true,
-          maxAge: 60 * 60 * 3,
-        });
+        const response = NextResponse.json({ data: { result: true, token: accessToken } }, { status: 200 });
 
         return response;
       } catch (error) {

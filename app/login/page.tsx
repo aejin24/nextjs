@@ -3,32 +3,16 @@
 import styles from "./style.module.scss";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import { signIn } from "next-auth/react";
 
-import { getAccessToken } from "./utils/service";
-import { TInput } from "./utils/type";
+import { TInput } from "@/types/login";
 
 export default function Login() {
-  const { register, getValues, handleSubmit } = useForm<TInput>();
+  const { register, handleSubmit } = useForm<TInput>();
 
-  const { mutate } = useMutation(getAccessToken);
-
-  const { push } = useRouter();
-
-  const handleSubmitClick = () => {
-    mutate(
-      {
-        email: getValues("email"),
-        password: getValues("password"),
-      },
-      {
-        onSuccess: (res) => {
-          if (res.result) push("/");
-        },
-      }
-    );
+  const handleSubmitClick = (data: TInput) => {
+    signIn("credentials", { ...data, callbackUrl: "/" });
   };
 
   return (

@@ -2,6 +2,7 @@
 
 import { ReactNode, useState } from "react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { SessionProvider } from "next-auth/react";
 
 type TProps = {
   children: ReactNode;
@@ -20,5 +21,9 @@ export default function Provider({ children }: TProps) {
     })
   );
 
-  return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+  return (
+    <SessionProvider>
+      <QueryClientProvider client={client}>{children}</QueryClientProvider>
+    </SessionProvider>
+  );
 }
