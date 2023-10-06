@@ -8,7 +8,7 @@ export default function Index() {
   return (
     <>
       <h1>status: {status}</h1>
-      <h1>session data: {JSON.stringify(data)}</h1>
+      <div>session token: {String(data?.token.accessToken)}</div>
     </>
   );
 }

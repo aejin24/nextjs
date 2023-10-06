@@ -29,9 +29,11 @@ const provider: NextAuthOptions = {
   ],
   callbacks: {
     session: async (session: any) => {
+      // useSession으로 접근할 때 실행됨
       return session;
     },
     jwt: async ({ token, user }: any) => {
+      // 로그인 시에 토큰 쿠키에 저장
       if (user) {
         // eslint-disable-next-line prefer-destructuring, no-param-reassign
         token.accessToken = user;
