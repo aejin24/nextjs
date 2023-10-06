@@ -1,5 +1,6 @@
-import "./@shared/styles/config/reset.scss";
-import "./@shared/styles/config/global.scss";
+import "./styles/config/reset.scss";
+import "./styles/config/global.scss";
+
 import Provider from "./Provider";
 
 export const metadata = {

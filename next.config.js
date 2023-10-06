@@ -8,6 +8,7 @@ const nextConfig = {
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "app", "styles")],
+    additionalData: '@use "@/styles/mixin/fontSize";',
   },
 };
 
