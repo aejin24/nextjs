@@ -37,48 +37,9 @@
 
 .signup {
   color: var(--GRAY7);
+  text-align: center;
 
-  span {
-    text-decoration: underline;
-    cursor: pointer;
+  a {
+    color: var(--GRAY7);
   }
-}
-
-%input-size {
-  width: 100%;
-  height: 48px;
-  margin-bottom: 16px;
-}
-
-.inputContainer {
-  position: relative;
-  @extend %input-size;
-
-  input {
-    @include fontSize.fontSize(14, 400);
-    @extend %input-size;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid var(--GRAY9);
-    outline: none;
-
-    &:focus,
-    &:valid {
-      border-color: var(--BLUE6);
-
-      + .label {
-        font-size: 14px;
-        color: var(--BLUE6);
-        transform: translateY(-45%);
-      }
-    }
-  }
-}
-
-.label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  line-height: 48px;
-  transition: 0.2s;
 }

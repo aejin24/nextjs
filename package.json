@@ -11,12 +11,15 @@
   "dependencies": {
     "@tanstack/react-query": "^4.29.19",
     "axios": "^1.4.0",
+    "framer-motion": "^10.16.4",
     "jsonwebtoken": "^9.0.0",
     "next": "13.4.7",
     "next-auth": "^4.23.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.45.1"
+    "react-hook-form": "^7.45.1",
+    "styled-components": "^6.1.0",
+    "zustand": "^4.4.3"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.2",
