@@ -29,6 +29,8 @@ export default function Login() {
   const router = useRouter();
 
   const handleSubmitClick = async (data: TInput) => {
+    // redirect: false 걸어놓으면 next-auth에서 디폴트로 설정한 페이지로 이동안함
+    // status로 로그인 성공했는지 안했는지 판별 가능
     const response = await signIn("credentials", { ...data, redirect: false });
 
     if (response?.status === 200) {
